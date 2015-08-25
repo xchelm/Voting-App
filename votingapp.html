@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <title>Cute or not? A voting app</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ 	<style>
+h1 {
+	font-family:Verdana;
+	text-align:center;
+	font-size:40px;
+}
+
+#picContainer {
+	text-align:center;
+}
+
+#votingButtonContainer {
+	text-align:center;
+	padding:5px;
+}
+
+#resultsButtonContainer {
+	text-align:center;
+	padding:10px;
+}
+
+#thumbsUp, #thumbsDown {
+	font-size:25px;
+	text-align:center;
+	margin:10px;
+}
+#results {
+	font-size:15px;
+	border-radius:10px;
+	background-color:white;
+}
+img {
+	max-height:250px;
+}
+	
+#resultsContainer {
+	text-align:center;
+	font-family:Verdana;
+	font-size:15px;
+}
+ 	</style>
+
+  
+</head>
+
+<body>
+	<h1>Cute or not?</h1>
+	<div id="picContainer">
+		<img id="animal"/>
+	</div>
+	<div id="votingButtonContainer">
+		<button id="thumbsUp">&#x1f44d</button>
+		<button id="thumbsDown">&#128078</button>
+	</div>
+	<div id="resultsButtonContainer">
+		<button id="results">Skip to Results</button>
+	</div>
+	<div id="resultsContainer">
+	</div>
+	
+	<script type="text/javascript">
+var imagesArray = ["puppy.jpeg", "kitten.jpeg", "lamb.jpg", "piglet.jpeg", "duckling.jpg", "monkey.jpg"]
+var currentAnimal = 0
+
+//Sets the first animal picture up
+document.getElementById("animal").src = imagesArray[currentAnimal]
+
+//Function to cycle through the array of animal pictures after user votes
+var changeToNewAnimal = function() {
+	currentAnimal++;
+	document.getElementById("animal").src = imagesArray[currentAnimal]
+}
+
+//Function to go to results page and hide all buttons and pictures
+var displayResults = function() {
+	document.getElementById("thumbsUp").style.display = "none";
+	document.getElementById("thumbsDown").style.display = "none";
+	document.getElementById("results").style.display = "none";
+	document.getElementById("animal").style.display = "none";
+	document.getElementById("resultsContainer").innerHTML = "Here are the results";
+}
+
+//User clicks the thumbs up
+document.getElementById("thumbsUp").onclick = function() {
+	if (currentAnimal<imagesArray.length-1){
+		changeToNewAnimal();
+	} else {
+	displayResults();
+	}
+}
+
+//User clicks the thumbs down
+document.getElementById("thumbsDown").onclick = function() {
+	if (currentAnimal<imagesArray.length-1){
+		changeToNewAnimal();
+	} else {
+	displayResults();
+	}
+}
+
+//User clicks the results button
+document.getElementById("results").onclick = function() {
+	displayResults();
+}
+
+	</script>
+	
+</body>
+</html>
