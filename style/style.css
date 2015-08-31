@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 h1 {
 	font-family:Verdana;
 	text-align:center;
@@ -52,4 +55,12 @@ img {
 	background-color: white;
 	display: none;
 	text-align: center;
+<<<<<<< Updated upstream
+=======
+}
+
+#newContainer {
+	text-align: center;
+	font-size: 15px;
+>>>>>>> Stashed changes
 }

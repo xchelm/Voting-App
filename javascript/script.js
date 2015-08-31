@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 
 
 var imagesArray = ["puppy.jpeg", "kitten.jpeg", "lamb.jpg", "piglet.jpeg", "duckling.jpg", "monkey.jpg"]
@@ -7,6 +8,9 @@ var begin = "./images/"
 for(var i = 0; i < imagesArray.length; i++){
 	imagesArray[i] = begin + imagesArray[i]
 };
+=======
+var imagesArray = ["./images/puppy.jpeg", "./images/kitten.jpeg", "./images/lamb.jpg", "./images/piglet.jpeg", "./images/duckling.jpg", "./images/monkey.jpg"]
+>>>>>>> Stashed changes
 
 var currentAnimal = 0
 
@@ -18,6 +22,11 @@ var pigRating = [];
 var ducRating = [];
 var monRating = [];
 
+<<<<<<< Updated upstream
+=======
+document.getElementById("newContainer").style.display = "none"
+
+>>>>>>> Stashed changes
 //Sets the first animal picture up
 var start = function (){
 	currentAnimal = 0;
@@ -40,7 +49,11 @@ var displayResults = function() {
 	document.getElementById("results").style.display = "none";
 	document.getElementById("animal").style.display = "none";
 	document.getElementById('resultsContainer').innerHTML="here are the results";
+<<<<<<< Updated upstream
 	
+=======
+	document.getElementById("newContainer").style.display ="inline"
+>>>>>>> Stashed changes
 	document.getElementById("reset").style.display ="inline";
 }
 
@@ -123,8 +136,21 @@ document.getElementById('reset').onclick =function() {
 	document.getElementById("animal").style.display = "inline";
 	document.getElementById("resultsContainer").innerHTML= "";
 	document.getElementById("reset").style.display ="none";
+<<<<<<< Updated upstream
 }
 
+=======
+	document.getElementById("newContainer").style.display ="none";
+}
+
+
+//user adds new animals
+document.getElementById("submitNew").onclick = function() {
+	var newAnimal = document.getElementById("newAnimal").value
+	imagesArray.unshift(newAnimal)
+	};
+
+>>>>>>> Stashed changes
 // math to show results
 function countVotes(arr){
 	var tUp = [];
@@ -157,4 +183,7 @@ function countVotes(arr){
   	 // find out how to print results
 //  }
 // }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
